@@ -30,12 +30,12 @@ pipeline {
         }
         stage('tomcat') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: '0772643b-f884-412e-a9e3-63eb2567206b', path: '', url: '"{{ tomcat_url }}"')], contextPath: null, war: 'target/*.war' "${tomcat_url}"
+                deploy adapters: [tomcat9(credentialsId: '0772643b-f884-412e-a9e3-63eb2567206b', path: '', url: '"{{ tomcat_url }}"')], contextPath: null, war: 'target/*.war' tomcat_url="${tomcat_url}"
             }
         }
         stage('tomcat1') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: '0772643b-f884-412e-a9e3-63eb2567206b', path: '', url: '"{{ tomcat_url }}"')], contextPath: null, war: 'target/*.war' "${tomcat_url}"
+                deploy adapters: [tomcat9(credentialsId: '0772643b-f884-412e-a9e3-63eb2567206b', path: '', url: '"{{ tomcat_url }}"')], contextPath: null, war: 'target/*.war' tomcat_url="${tomcat_url}"
             }
         }
     }

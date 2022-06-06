@@ -67,8 +67,8 @@
   </build>
  <distributionManagement>
     <snapshotRepository>
-      <id>maven-releases</id>
-      <url>http://18.237.241.142:8081/repository/maven-releases/</url>
+      <id>gow-maven</id>
+      <url>http://34.209.156.141:8081/repository/gow-maven/</url>
     </snapshotRepository>
  </distributionManagement>
 

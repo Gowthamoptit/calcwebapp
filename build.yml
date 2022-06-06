@@ -1,0 +1,22 @@
+---
+- hosts: webservers
+  become: true
+  gather_facts: true
+  vars:
+      user: admin
+      passwd: Mgr@1998 
+      war_file_path: /var/lib/jenkins/workspace/double_deploy/webapp/target/webapp.war
+      nexus_ip: 34.209.156.141
+  tasks:
+    - name: upload file to Nexus
+      uri:
+       url: " http://{{ nexus_ip }}:8081/repository/gow-maven/"
+       validate_certs: no
+       method: "PUT"
+       status_code: 201, 200, 500
+       src: "{{ war_file_path }}"
+       url_username: "{{ user }}"
+       url_password: "{{ passwd }}"
+...
+
+

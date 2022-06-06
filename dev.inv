@@ -1,0 +1,6 @@
+[webservers]
+34.209.156.141
+
+[all:vars]
+ansible_ssh_user=deployer
+ansible_ssh_private_key_file=/var/lib/jenkins/secrets/id_rsa
